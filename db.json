@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Seiji Villafranca",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Glenn Olazo",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Ruel Rodrigo",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "John Barrozo",
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Jane Doe",
+      "active": false
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "PS5",
+      "price": 27000,
+      "sold": 1000
+    },
+    {
+      "id": 2,
+      "name": "Nintendo Switch",
+      "price": 18990,
+      "sold": 600
+    },
+    {
+      "id": 3,
+      "name": "Xbox",
+      "price": 23000,
+      "sold": 700
+    }
+  ]
+}

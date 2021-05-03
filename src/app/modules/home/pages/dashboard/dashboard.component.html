@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-6">
+    <app-dashboard-table
+    [title]="'Product List'"
+    [tableHeaders]="productTableHeaders"
+    [dataProperties]="productsProperties"
+    [list]="products$ | async"
+    (selectedData)="selectedData($event)"
+    ></app-dashboard-table>
+  </div>
+  <div class="col-md-6">
+    <app-dashboard-table
+    [title]="'Users List'"
+    [tableHeaders]="usersTableHeaders"
+    [dataProperties]="usersProperties"
+    [list]="users$ | async"
+    (selectedData)="selectedData($event)"
+    ></app-dashboard-table>
+  </div>
+</div>
+
+
+

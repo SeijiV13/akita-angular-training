@@ -1,0 +1,14 @@
+<h3>User Form</h3>
+<form [formGroup]="form" >
+  <label for="name">Name</label>
+  <input formControlName="name" class="form-control" placeholder="Ëx. John Doe">
+
+  <label for="bio">Bio</label>
+  <input formControlName="bio" class="form-control" placeholder="Ëx. I love programming">
+
+  <label for="bio">Gender</label>
+  <select formControlName="gender" class="form-control">
+    <option value="M">Male</option>
+    <option value="F">Female</option>
+  </select>
+</form>
