@@ -1,21 +1,33 @@
-import { User } from './../../shared/models/user';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { Product } from 'src/app/shared/models/product';
 import { environment } from 'src/environments/environment';
 import { tap, catchError } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { User } from './user.model';
+import { UserStore } from './user.store';
+import { ID } from '@datorama/akita';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  selectedUser: User;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userStore: UserStore) { }
+
+  setSelectedUser(user: User) {
+     this.selectedUser = user;
+  }
+
+  getSelectedUser() {
+    return this.selectedUser
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get(`${environment.url}/users`).pipe(
-      tap((data: User[]) => data),
+      tap((data: User[]) => {
+        this.userStore.loadUsers(data, true);
+      }),
       catchError((error) => throwError(`${error}`))
     )
   }
@@ -29,21 +41,27 @@ export class UserService {
 
   addUser(user: User): Observable<User> {
     return this.http.post(`${environment.url}/users`, user).pipe(
-      tap((data: User) => data),
+      tap((data: User) => {
+        this.userStore.addUser(data);
+      }),
       catchError((error) => throwError(`${error}`))
     )
   }
 
-  updateUser(id:string, user: User): Observable<User> {
-    return this.http.put(`${environment.url}/users/${id}`, user).pipe(
-      tap((data: User) => data),
+  updateUser(user: User): Observable<User> {
+    return this.http.put(`${environment.url}/users/${user.id}`, user).pipe(
+      tap((data: User) => {
+        this.userStore.replace(user.id, data);
+      }),
       catchError((error) => throwError(`${error}`))
     )
   }
 
-  deleteUser(id:string): Observable<User> {
+  deleteUser(id: ID): Observable<User> {
     return this.http.delete(`${environment.url}/users/${id}`).pipe(
-      tap((data: User) => data),
+      tap((data: User) => {
+        this.userStore.remove(id);
+      }),
       catchError((error) => throwError(`${error}`))
     )
   }

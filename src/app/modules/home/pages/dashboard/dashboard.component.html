@@ -14,8 +14,10 @@
     [tableHeaders]="usersTableHeaders"
     [dataProperties]="usersProperties"
     [list]="users$ | async"
-    (selectedData)="selectedData($event)"
+    (selectedData)="userAction($event, 'view')"
     ></app-dashboard-table>
+
+    <button class="btn btn-info" (click)="userAction(null, 'create')">Create User</button>
   </div>
 </div>
 

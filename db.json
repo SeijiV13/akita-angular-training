@@ -3,26 +3,63 @@
     {
       "id": 1,
       "name": "Seiji Villafranca",
+      "bio": "test",
+      "gender": "M",
       "active": true
     },
     {
       "id": 2,
       "name": "Glenn Olazo",
+      "bio": "test",
+      "gender": "M",
       "active": true
     },
     {
       "id": 3,
       "name": "Ruel Rodrigo",
+      "bio": "test",
+      "gender": "M",
       "active": true
     },
     {
       "id": 4,
       "name": "John Barrozo",
+      "bio": "test",
+      "gender": "M",
       "active": true
     },
     {
       "id": 5,
       "name": "Jane Doe",
+      "bio": "test",
+      "gender": "F",
+      "active": false
+    },
+    {
+      "name": "Test One",
+      "bio": "Wow",
+      "gender": "M",
+      "id": 6
+    },
+    {
+      "name": "Test two",
+      "bio": "testing",
+      "gender": "M",
+      "active": false,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Test four",
+      "bio": "test",
+      "gender": "F",
+      "active": false
+    },
+    {
+      "id": 9,
+      "name": "State User",
+      "bio": "Edited the Bio",
+      "gender": "F",
       "active": false
     }
   ],

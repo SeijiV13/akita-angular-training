@@ -1,1 +1,1 @@
-<app-user-form></app-user-form>
+<app-user-form [user]="user$ | async" [action]="action" (submitForm)="submit($event)"></app-user-form>
